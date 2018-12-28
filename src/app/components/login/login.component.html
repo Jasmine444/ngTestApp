@@ -1,0 +1,7 @@
+<label>Username</label>
+<input type="username" [(ngModel)]="user.username"/>
+<label>Password</label>
+<input type="password" [(ngModel)]="user.password"/>
+<button (click)="login(user)">Login</button>
+<p>{{errorMessage}}</p>
+<a href="/about">About</a>

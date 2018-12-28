@@ -1,0 +1,19 @@
+<h1>
+  Products
+</h1>
+<button (click)="isCart=!isCart">Show<span *ngIf="!isCart"> cart</span><span *ngIf="isCart"> catalog</span></button>
+<h6>
+  Ukupna suma: {{sum}}
+</h6>
+<p>{{errorMessage}}</p>
+<div class="container-fluid row" *ngIf="!isCart">
+  <div *ngFor="let product of products"  class="col-sm-4 top-padding">
+    <app-product [product]="product"  (added)="onAdd($event)" (removed)="onRemove($event)"></app-product>
+  </div>
+</div>
+<div class="container-fluid row" *ngIf="isCart">
+  <div *ngFor="let product of cart"  class="col-sm-4 top-padding">
+    <app-product [product]="product"  (added)="onAdd($event)" (removed)="onRemove($event)"></app-product>
+    <p>In cart: {{product.quantityInCart}}</p>
+  </div>
+</div>

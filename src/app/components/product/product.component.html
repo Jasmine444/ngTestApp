@@ -1,0 +1,16 @@
+
+  <p>
+    {{product.name}}
+  </p>
+  <p>
+    {{product.category.name}}
+  </p>
+  <p>
+    {{product.price}}
+  </p>
+  <input type="number" [(ngModel)]="product.quantity"/>
+  <button (click)="addProduct(product)">Add</button>
+  <button (click)="removeProduct(product)">Remove</button>
+  <button class="btn btn-primary" (click)="gotoDetails(product)">Details</button>
+
+
